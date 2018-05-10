@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>show gateway - lamb gateway</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/default.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <img src="../img/logo.svg" width="24" height="24" />
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
+        <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
+        <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
+        <a class="py-2 d-none d-md-inline-block" href="../document.html">Documentation</a>
+        <a class="py-2 d-none d-md-inline-block" href="../community.html">Community</a>
+        <a class="py-2 d-none d-md-inline-block" href="../support.html">Support</a>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <h3 class="mt-5">show gateway  <small class="help text-muted"> 查看运营商网关配置信息</small></h3>
+      <hr />
+      <div class="row pl-3 pt-3">
+        <span class="badge badge-secondary">使用示例</span> &nbsp;查看运营商网关配置信息
+      </div>
+      <div class="row pl-3 pt-3">
+        <code><pre>lamb> show gateway</pre></code>
+      </div>
+      <div class="row p-3">
+        <code class="text-code">
+          <pre>Id Name       Host            Port  User   Password Spcode         Encoding  Extended Concurrent </pre>
+          <pre>---------------------------------------------------------------------------------------------------------</pre>
+          <pre> 1 cmcc01     123.55.180.155  7890  aaaaaa 12345678 106912345677   gbk       false    1000      </pre>
+          <pre> 2 gateway    123.55.180.156  7890  bbbbbb 12345678 106912345678   ucs-2     false    1000      </pre>
+          <pre> 3 aliyun     180.211.10.99   7890  cccccc 12345678 106912345679   utf-8     false    1000      </pre>
+
+        </code>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Id</span></div><div class="col-11">网关ID编号</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Name</span></div><div class="col-11">网关名称</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Host</span></div><div class="col-11">网关服务器IP地址</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Port</span></div><div class="col-11">网关服务器端口</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">User</span></div><div class="col-11">网关登录帐号</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Password</span></div><div class="col-11">网关登录密码</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Spcode</span></div><div class="col-11">网关通道接入码</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Encoding</span></div><div class="col-11">网关通道编码</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Extended</span></div><div class="col-11">网关接入码是否可扩展</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Concurrent</span></div><div class="col-11">网关每秒消息速率限制</div>
+      </div>
+    </main>
+
+    <div class="footer text-center fixed-bottom">
+      <span class="text-muted">Copyright © 2018 BitCloud, Inc. All Rights Reserved.</span>
+    </div>
+  </body>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</html>

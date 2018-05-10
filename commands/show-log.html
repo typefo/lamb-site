@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>show log - lamb gateway</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/default.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <img src="../img/logo.svg" width="24" height="24" />
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
+        <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
+        <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
+        <a class="py-2 d-none d-md-inline-block" href="../document.html">Documentation</a>
+        <a class="py-2 d-none d-md-inline-block" href="../community.html">Community</a>
+        <a class="py-2 d-none d-md-inline-block" href="../support.html">Support</a>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <h3 class="mt-5">show log &lt;type&gt;  <small class="help text-muted"> 查看所有 server 业务处理进程信息</small></h3>
+      <hr />
+      <div class="row pl-3 pt-3">
+        <span class="badge badge-secondary">使用示例1</span> &nbsp;参数 type 表示日志类型，使用 ? 问号显示可用的所有类型列表
+      </div>
+      <div class="row pl-3 pt-3">
+        <code><pre>lamb> show log ?</pre></code>
+      </div>
+      <div class="row p-3">
+        <code class="text-code">
+          <pre>client       Client log information</pre>
+          <pre>server       Server log information</pre>
+          <pre>channel      Channel log information</pre>
+          <pre>mt           MT module log information</pre>
+          <pre>mo           MO module log information</pre>
+          <pre>scheduler    Scheduler log information</pre>
+          <pre>delivery     Delivery log information</pre>
+          <pre>testd        Test module log information</pre>
+          <pre>daemon       Daemon module log information</pre>
+          <pre>database     Database log information</pre>
+        </code>
+      </div>
+      <div class="row pl-3 pt-3">
+        <span class="badge badge-secondary">使用示例2</span> &nbsp;查看 channel 运营商通道日志信息
+      </div>
+      <div class="row pl-3 pt-3">
+        <code><pre>lamb> show log channel</pre></code>
+      </div>
+      <div class="row p-3">
+        <code class="text-code">
+          <pre>May  9 14:25:41 iKbp173nglzx9jagu7jxjrZ lamb-gateway[26191]: can't connect to server 123.55.180.155</pre>
+          <pre>May  9 14:26:16 iKbp173nglzx9jagu7jxjrZ lamb-gateway[26216]: can't connect to server 123.55.180.155</pre>
+        </code>
+      </div>
+    </main>
+
+    <div class="footer text-center fixed-bottom">
+      <span class="text-muted">Copyright © 2018 BitCloud, Inc. All Rights Reserved.</span>
+    </div>
+  </body>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</html>

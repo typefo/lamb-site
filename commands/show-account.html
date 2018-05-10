@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>show account - lamb gateway</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/default.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <img src="../img/logo.svg" width="24" height="24" />
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
+        <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
+        <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
+        <a class="py-2 d-none d-md-inline-block" href="../document.html">Documentation</a>
+        <a class="py-2 d-none d-md-inline-block" href="../community.html">Community</a>
+        <a class="py-2 d-none d-md-inline-block" href="../support.html">Support</a>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <h3 class="mt-5">show account  <small class="help text-muted"> 查看所有 account 账户配置信息</small></h3>
+      <hr />
+      <div class="row pl-3 pt-3">
+        <span class="badge badge-secondary">使用示例</span> &nbsp;查看所有 account 账户配置信息
+      </div>
+      <div class="row pl-3 pt-3">
+        <core><pre>lamb> show account</pre></core>
+      </div>
+      <div class="row p-3">
+        <code class="text-code">
+          <pre>Id User    Password Spcode              company address         concurrent options</pre>
+          <pre>------------------------------------------------------------------------------------</pre>
+          <pre> 1 100001  Kmdtapk  1069100001          1       0.0.0.0         0          0          </pre>
+          <pre> 1 100002  mpdtask  1069100002          1       0.0.0.0         0          0          </pre>
+          <pre> 1 100003  edgt2pk  1069100003          1       0.0.0.0         0          0          </pre>
+          <pre> 1 100004  mmdjapp  1069100004          1       0.0.0.0         0          0          </pre>
+          <pre> 1 100005  emitppw  1069100005          1       0.0.0.0         0          0          </pre>
+        </code>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Id</span></div><div class="col-11">账户ID编号</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">User</span></div><div class="col-11">账户名称</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Password</span></div><div class="col-11">账户密码</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Spcode</span></div><div class="col-11">账户接入码</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">company</span></div><div class="col-11">账户所属公司编号</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">address</span></div><div class="col-11">账户的客户端IP地址</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">concurrent</span></div><div class="col-11">客户端的每秒并发数</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">options</span></div><div class="col-11">账户安全选项</div>
+      </div>
+    </main>
+
+    <div class="footer text-center fixed-bottom">
+      <span class="text-muted">Copyright © 2018 BitCloud, Inc. All Rights Reserved.</span>
+    </div>
+  </body>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</html>

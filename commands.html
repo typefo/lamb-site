@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>clients - lamb gateway</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/default.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <img src="img/logo.svg" width="24" height="24" />
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="commands.html">Commands</a>
+        <a class="py-2 d-none d-md-inline-block" href="clients.html">Clients</a>
+        <a class="py-2 d-none d-md-inline-block" href="download.html">Download</a>
+        <a class="py-2 d-none d-md-inline-block" href="document.html">Documentation</a>
+        <a class="py-2 d-none d-md-inline-block" href="community.html">Community</a>
+        <a class="py-2 d-none d-md-inline-block" href="support.html">Support</a>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <h3 class="mt-5">The lamb command</h3>
+      <p class="lead"><small><span class="badge badge-dark">lamb&gt;</span> 命令详细列表，以及该命令支持的系统版本和功能说明</small></p>
+      <hr />
+      <table class="command-list table table-borderless">
+        <tr><td><a href="commands/help.html">help</a></td><td>1.2</td><td class="text-muted">显示所有 lamb 命令帮助信息</td><td></tr>
+        <tr><td><a href="commands/show-mt.html">show mt</a></td><td>1.2</td><td class="text-muted">显示核心 MT 上行消息队列统计信息</td></tr>
+        <tr><td><a href="commands/show-mo.html">show mo</a></td><td>1.2</td><td class="text-muted">显示核心 MO 下行消息队列统计信息</td></tr>
+        <tr><td><a href="commands/show-core.html">show core</a></td><td>1.2</td><td class="text-muted">显示核心模块的运行状态信息</td></tr>
+        <tr><td><a href="commands/show-client.html">show client</a></td><td>1.2</td><td class="text-muted">显示当前 cmpp 客户端连接信息</td></tr>
+        <tr><td><a href="commands/show-server.html">show server</a></td><td>1.2</td><td class="text-muted">显示所有 server 业务处理进程信息</td></tr>
+        <tr><td><a href="commands/show-account.html">show account</a></td><td>1.2</td><td class="text-muted">显示所有 account 账户信息</td></tr>
+        <tr><td><a href="commands/show-channel.html">show channel</a></td><td>1.2</td><td class="text-muted">显示运营商 channel 网关状态信息</td></tr>
+        <tr><td><a href="commands/show-gateway.html">show gateway</a></td><td>1.2</td><td class="text-muted">显示运营商网关账户信息</td></tr>
+        <tr><td><a href="commands/show-delivery.html">show delivery</a></td><td>1.2</td><td class="text-muted">显示下行推送路由表信息</td></tr>
+        <tr><td><a href="commands/show-routing.html">show routing</a></td><td>1.2</td><td class="text-muted">显示账号的上行路由表信息</td></tr>
+        <tr><td><a href="commands/show-log.html">show log</a></td><td>1.2</td><td class="text-muted">查看模块日志输出信息</td></tr>
+        <tr><td><a href="commands/kill-client.html">kill client</a></td><td>1.2</td><td class="text-muted">强制断开一个 cmpp 客户端连接</td></tr>
+        <tr><td><a href="commands/kill-server.html">kill server</a></td><td>1.2</td><td class="text-muted">强制一个 server 业务进程退出</td></tr>
+        <tr><td><a href="commands/kill-channel.html">kill channel</a></td><td>1.2</td><td class="text-muted">强制一个 channel 网关退出下线</td></tr>
+        <tr><td><a href="commands/start-server.html">start server</a></td><td>1.2</td><td class="text-muted">启动一个 server 业务处理进程</td></tr>
+        <tr><td><a href="commands/start-channel.html">start channel</a></td><td>1.2</td><td class="text-muted">启动一个 channel 网关通道连接</td></tr>
+        <tr><td><a href="commands/change-password.html">change password</a></td><td>1.2</td><td class="text-muted">修改 lamb 管理平台的用户密码</td></tr>
+        <tr><td><a href="commands/show-version.html">show version</a></td><td>1.2</td><td class="text-muted">显示 lamb 系统的版本信息</td></tr>
+        <tr><td><a href="commands/exit.html">exit</a></td><td>1.2</td><td class="text-muted">退出 lamb 系统登录</td></tr>
+      </table>
+    </main>
+    <br />
+    <br />
+    <br />
+    <div class="footer text-center">
+      <span class="text-muted">Copyright © 2018 BitCloud, Inc. All Rights Reserved.</span>
+    </div>
+  </body>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</html>

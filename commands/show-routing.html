@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>show routing - lamb gateway</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/default.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <img src="../img/logo.svg" width="24" height="24" />
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
+        <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
+        <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
+        <a class="py-2 d-none d-md-inline-block" href="../document.html">Documentation</a>
+        <a class="py-2 d-none d-md-inline-block" href="../community.html">Community</a>
+        <a class="py-2 d-none d-md-inline-block" href="../support.html">Support</a>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <h3 class="mt-5">show routing &lt;id&gt; <small class="help text-muted"> 查看上行路由表信息</small></h3>
+      <hr />
+      <div class="row pl-3 pt-3">
+        <span class="badge badge-secondary">使用示例</span> &nbsp;参数 &lt;id&gt; 表示账户ID编号
+      </div>
+      <div class="row pl-3 pt-3">
+        <code><pre>lamb> show routing 1</pre></code>
+      </div>
+      <div class="row p-3">
+        <code class="text-code">
+          <pre>Id    Account Weight Cmcc  Ctcc  Cucc  Other          </pre>
+          <pre>---------------------------------------------------</pre>
+          <pre> 1    1       1      true  true  true  false          </pre>
+          <pre> 2    2       1      true  true  false false          </pre>
+          <pre> 3    4       2      false true  true  false          </pre>
+        </code>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Id</span></div><div class="col-11">帐号ID编号</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Weight</span></div><div class="col-11">通道优先级</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Cmcc</span></div><div class="col-11">移动运营商</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Ctcc</span></div><div class="col-11">电信运营商</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Cucc</span></div><div class="col-11">联通运营商</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Other</span></div><div class="col-11">其他运营商</div>
+      </div>
+    </main>
+
+    <div class="footer text-center fixed-bottom">
+      <span class="text-muted">Copyright © 2018 BitCloud, Inc. All Rights Reserved.</span>
+    </div>
+  </body>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</html>

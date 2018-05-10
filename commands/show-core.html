@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>show core - lamb gateway</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/default.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <img src="../img/logo.svg" width="24" height="24" />
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
+        <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
+        <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
+        <a class="py-2 d-none d-md-inline-block" href="../document.html">Documentation</a>
+        <a class="py-2 d-none d-md-inline-block" href="../community.html">Community</a>
+        <a class="py-2 d-none d-md-inline-block" href="../support.html">Support</a>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <h3 class="mt-5">show core  <small class="help text-muted"> 查看核心模块的运行状态信息</small></h3>
+      <hr />
+      <div class="row pl-3 pt-3">
+        <span class="badge badge-secondary">使用示例</span> &nbsp;显示核心模块的运行状态信息
+      </div>
+      <div class="row pl-3 pt-3">
+        <code><pre>lamb> show core</pre></code>
+      </div>
+      <div class="row p-3">
+        <code class="text-code">
+          <pre>Pid Module    Status Description</pre>
+          <pre>-----------------------------------------------------------</pre>
+          <pre>29509 ismg        ok   client cmpp access gateway</pre>
+          <pre>20303 mt          ok   core uplink message queue service</pre>
+          <pre>20308 mo          ok   core downlink message queue service</pre>
+          <pre>20315 scheduler   ok   core routing scheduler service</pre>
+          <pre>20321 delivery    ok   core delivery scheduler service</pre>
+          <pre>20330 testd       ok   carrier gateway test service</pre>
+          <pre>20337 daemon      ok   daemon management service</pre>
+        </code>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Pid</span></div><div class="col-11">表示模块进程 PID</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Module</span></div><div class="col-11">表示模块名称</div>
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col-1 text-left p-0"><span class="badge badge-light">Status</span></div><div class="col-11">表示模块当前运行状态，ok 表示正常，no 表示异常</div>
+      </div>
+    </main>
+
+    <div class="footer text-center fixed-bottom">
+      <span class="text-muted">Copyright © 2018 BitCloud, Inc. All Rights Reserved.</span>
+    </div>
+  </body>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</html>
