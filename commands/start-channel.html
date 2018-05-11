@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>show mo - lamb gateway</title>
+    <title>start channel - lamb gateway</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -28,31 +28,31 @@
     </nav>
 
     <main role="main" class="container">
-      <h3 class="mt-5">show mo  <small class="help text-muted"> 查看下行消息队列统计信息</small></h3>
+      <h3 class="mt-5">start channel &lt;id&gt; <small class="help text-muted"> 启动一个 channel 网关通道连接</small></h3>
       <hr />
+      <div class="row pl-3 pt-3 text-secondary">参数 &lt;id&gt; 为运营商网关通道ID编号</div>
       <div class="row pl-3 pt-3">
-        <span class="badge badge-secondary">使用示例</span> &nbsp;查看下行消息队列统计信息
+        <span class="p-1 badge badge-secondary">使用示例</span> &nbsp;查看当前所有运营商网关通道
       </div>
       <div class="row pl-3 pt-3">
-        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> show mo</code></pre></div>
+        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> show channel</code></pre></div>
       </div>
       <div class="row p-3">
         <code class="text-code">
-          <pre>Id   Account Total  Description</pre>
-          <pre>---------------------------------------------------</pre>
-          <pre>1    null    983    no description</pre>
-          <pre>2    null    0      no description</pre>
-          <pre>13   null    0      no description</pre>
-          <pre>14   null    0      no description</pre>
-          <pre>16   null    0      no description</pre>
+          <pre>Id Name      Type   Host            Status  Speed  Error</pre>
+          <pre>----------------------------------------------------------</pre>
+          <pre> 1 test      cmpp   192.168.1.156     ok    0      0</pre>
+          <pre> 2 abc123    cmpp   110.160.97.18     no    0      0</pre>
+          <pre> 3 demo      cmpp   212.25.19.100     no    0      0</pre>
         </code>
       </div>
       <div class="row pl-3 pt-3">
-        <div class="col-1 text-left p-0"><span class="badge badge-light">Id</span></div><div class="col-11"> 表示对应 account 账户编号</div>
+        <span class="p-1 badge badge-secondary">使用示例</span> &nbsp; 启动一个 channel 网关通道连接
       </div>
       <div class="row pl-3 pt-3">
-        <div class="col-1 text-left p-0"><span class="badge badge-light">Total</span></div><div class="col-11"> 表示当前等待推送给客户端的下行消息总数</div>
+        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> start channel 2</code></pre></div>
       </div>
+      <p class="ml-1 my-4 text-secondary">如果启动 server 很长时间之后状态没有 ok，可以使用 <code>show log channel</code> 命令查看具体错误日志</p>
     </main>
 
     <div class="footer text-center fixed-bottom">

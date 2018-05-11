@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>show mo - lamb gateway</title>
+    <title>exit - lamb gateway</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -28,31 +28,15 @@
     </nav>
 
     <main role="main" class="container">
-      <h3 class="mt-5">show mo  <small class="help text-muted"> 查看下行消息队列统计信息</small></h3>
+      <h3 class="mt-5">exit <small class="help text-muted"> 退出 lamb 系统登录</small></h3>
       <hr />
       <div class="row pl-3 pt-3">
-        <span class="badge badge-secondary">使用示例</span> &nbsp;查看下行消息队列统计信息
+        <span class="badge badge-secondary">使用示例</span> &nbsp; 退出 lamb 系统登录
       </div>
       <div class="row pl-3 pt-3">
-        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> show mo</code></pre></div>
+        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> exit</code></pre></div>
       </div>
-      <div class="row p-3">
-        <code class="text-code">
-          <pre>Id   Account Total  Description</pre>
-          <pre>---------------------------------------------------</pre>
-          <pre>1    null    983    no description</pre>
-          <pre>2    null    0      no description</pre>
-          <pre>13   null    0      no description</pre>
-          <pre>14   null    0      no description</pre>
-          <pre>16   null    0      no description</pre>
-        </code>
-      </div>
-      <div class="row pl-3 pt-3">
-        <div class="col-1 text-left p-0"><span class="badge badge-light">Id</span></div><div class="col-11"> 表示对应 account 账户编号</div>
-      </div>
-      <div class="row pl-3 pt-3">
-        <div class="col-1 text-left p-0"><span class="badge badge-light">Total</span></div><div class="col-11"> 表示当前等待推送给客户端的下行消息总数</div>
-      </div>
+      <p class="ml-1 my-4 text-secondary">可以使用任何 ssh 客户端重新登录到 lamb 控制台管理系统</p>
     </main>
 
     <div class="footer text-center fixed-bottom">

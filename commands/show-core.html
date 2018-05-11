@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +17,7 @@
         <a class="py-2" href="/">
           <img src="../img/logo.svg" width="24" height="24" />
         </a>
+        <a class="py-2 d-none d-md-inline-block" href="../index.html">Home</a>
         <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
         <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
         <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
@@ -33,19 +34,19 @@
         <span class="badge badge-secondary">使用示例</span> &nbsp;显示核心模块的运行状态信息
       </div>
       <div class="row pl-3 pt-3">
-        <code><pre>lamb> show core</pre></code>
+        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> show core</code></pre></div>
       </div>
       <div class="row p-3">
         <code class="text-code">
-          <pre>Pid Module    Status Description</pre>
+          <pre>Pid    Module    Status  Description</pre>
           <pre>-----------------------------------------------------------</pre>
-          <pre>29509 ismg        ok   client cmpp access gateway</pre>
-          <pre>20303 mt          ok   core uplink message queue service</pre>
-          <pre>20308 mo          ok   core downlink message queue service</pre>
-          <pre>20315 scheduler   ok   core routing scheduler service</pre>
-          <pre>20321 delivery    ok   core delivery scheduler service</pre>
-          <pre>20330 testd       ok   carrier gateway test service</pre>
-          <pre>20337 daemon      ok   daemon management service</pre>
+          <pre>29509  ismg        ok    client cmpp access gateway</pre>
+          <pre>20303  mt          ok    core uplink message queue service</pre>
+          <pre>20308  mo          ok    core downlink message queue service</pre>
+          <pre>20315  scheduler   ok    core routing scheduler service</pre>
+          <pre>20321  delivery    ok    core delivery scheduler service</pre>
+          <pre>20330  testd       ok    carrier gateway test service</pre>
+          <pre>20337  daemon      ok    daemon management service</pre>
         </code>
       </div>
       <div class="row pl-3 pt-3">

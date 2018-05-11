@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +17,7 @@
         <a class="py-2" href="/">
           <img src="../img/logo.svg" width="24" height="24" />
         </a>
+        <a class="py-2 d-none d-md-inline-block" href="../index.html">Home</a>
         <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
         <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
         <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
@@ -27,13 +28,16 @@
     </nav>
 
     <main role="main" class="container">
-      <h3 class="mt-5">show log &lt;type&gt;  <small class="help text-muted"> 查看所有 server 业务处理进程信息</small></h3>
+      <h3 class="mt-5">show log &lt;type&gt;<small class="help text-muted"> 查看所有 server 业务处理进程信息</small></h3>
       <hr />
-      <div class="row pl-3 pt-3">
-        <span class="badge badge-secondary">使用示例1</span> &nbsp;参数 type 表示日志类型，使用 ? 问号显示可用的所有类型列表
+      <div class="row pl-3 pt-2 text-secondary">
+        参数 &lt;type&gt; 表示日志类型
       </div>
       <div class="row pl-3 pt-3">
-        <code><pre>lamb> show log ?</pre></code>
+        <span class="badge badge-secondary">使用示例1</span> &nbsp;使用 ? 问号显示可用的所有类型列表
+      </div>
+      <div class="row pl-3 pt-3">
+        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> show log ?</code></pre></div>
       </div>
       <div class="row p-3">
         <code class="text-code">
@@ -53,7 +57,7 @@
         <span class="badge badge-secondary">使用示例2</span> &nbsp;查看 channel 运营商通道日志信息
       </div>
       <div class="row pl-3 pt-3">
-        <code><pre>lamb> show log channel</pre></code>
+        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> show log channel</code></pre></div>
       </div>
       <div class="row p-3">
         <code class="text-code">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>show mo - lamb gateway</title>
+    <title>show version - lamb gateway</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -28,30 +28,19 @@
     </nav>
 
     <main role="main" class="container">
-      <h3 class="mt-5">show mo  <small class="help text-muted"> 查看下行消息队列统计信息</small></h3>
+      <h3 class="mt-5">show version <small class="help text-muted"> 显示 lamb 系统的版本信息</small></h3>
       <hr />
       <div class="row pl-3 pt-3">
-        <span class="badge badge-secondary">使用示例</span> &nbsp;查看下行消息队列统计信息
+        <span class="badge badge-secondary">使用示例</span> &nbsp; 显示 lamb 系统的版本信息
       </div>
       <div class="row pl-3 pt-3">
-        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> show mo</code></pre></div>
+        <div class="col rounded pl-1 py-2 bg-light"><pre><code>lamb> show version</code></pre></div>
       </div>
-      <div class="row p-3">
+      <div class="row pl-3 pt-3">
         <code class="text-code">
-          <pre>Id   Account Total  Description</pre>
-          <pre>---------------------------------------------------</pre>
-          <pre>1    null    983    no description</pre>
-          <pre>2    null    0      no description</pre>
-          <pre>13   null    0      no description</pre>
-          <pre>14   null    0      no description</pre>
-          <pre>16   null    0      no description</pre>
+          <pre>lamb gateway version 1.2</pre>
+          <pre>Copyright (C) 2018 typefo &lt;typefo@qq.com&gt;</pre>
         </code>
-      </div>
-      <div class="row pl-3 pt-3">
-        <div class="col-1 text-left p-0"><span class="badge badge-light">Id</span></div><div class="col-11"> 表示对应 account 账户编号</div>
-      </div>
-      <div class="row pl-3 pt-3">
-        <div class="col-1 text-left p-0"><span class="badge badge-light">Total</span></div><div class="col-11"> 表示当前等待推送给客户端的下行消息总数</div>
       </div>
     </main>
 
