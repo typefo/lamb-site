@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Installation and configuration - lamb gateway</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/default.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <img src="../img/logo.svg" width="24" height="24" />
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="../index.html">Home</a>
+        <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
+        <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
+        <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
+        <a class="py-2 d-none d-md-inline-block" href="../document.html">Documentation</a>
+        <a class="py-2 d-none d-md-inline-block" href="../community.html">Community</a>
+        <a class="py-2 d-none d-md-inline-block" href="../support.html">Support</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h3 class="mt-5">lamb 安装与基础配置</h3>
+      <h6 class="text-muted">基于 lamb 1.2 版本，CentOS 7 操作系统</h6>
+      <hr />
+    </div>
+
+    <main role="main" class="container">
+      <div class="pt-3">
+        <h5>第三方依赖包</h5>
+        <p class="pl-3">
+          <code class="text-dark">
+          php-7,
+          yaf-3.0,
+          nginx-1.12,
+          redis-4.0,
+          cmpp-1.1,
+          hiredis-0.13,
+          libiconv-1.15,
+          <br />
+          postgresql-10,
+          nanomsg-1.1.2,
+          protobuf-3.5.1,
+          protobuf-c 1.3.0,
+          libconfig-1.4.9
+          </code>
+        </p>
+      </div>
+      <div class="pt-3">
+        <h5>基础软件包的安装</h5>
+        <p>
+          <pre class="pl-3 bg-light rounded"><code>
+$ yum update -y
+$ yum install -y epel-release
+$ yum install -y gcc gcc-c++ make cmake automake autoconf libtool openssl-devel curl-devel
+$ yum install -y git wget re2c re2c-devl flex flex-devel bison bison-devl libconfig-devel
+$ yum install -y pcre-devel readline-devel libxml2-devel hiredis-devel libpqxx-devel
+          </code></pre>
+        </p>
+      </div>
+      <div class="pt-3">
+        <h5>其他组件安装方法</h5>
+        <p class="pl-3">
+          <a href="#">nginx 安装</a><br />
+          <a href="#"> php 安装 </a><br />
+          <a href="#">postgresql 安装</a><br />
+        </p>
+      </div>
+
+      <div class="pt-3">
+        <h5>内核参数配置 <small class="text-secondary"> /etc/sysctl.conf</small></h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv4.ip_forward = 1
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_fin_timeout = 15
+net.ipv4.tcp_synack_retries = 2
+fs.file-max = 2048000
+fs.nr_open = 2048000
+fs.file-max = 1024000
+fs.aio-max-nr = 1048576
+          </code></pre></p>
+      </div>
+      <div class="pt-3">
+        <h5>内核参数配置 <small class="text-secondary"> /etc/security/limits.conf</small></h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+* soft    nofile  1024000
+* hard    nofile  1024000
+* soft    nproc   unlimited
+* hard    nproc   unlimited
+* soft    core    unlimited
+* hard    core    unlimited
+* soft    memlock unlimited
+* hard    memlock unlimited
+          </code></pre></p>
+      </div>
+
+      <div class="pt-3">
+        <h5>libiconv 安装</h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+$ wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.15.tar.gz
+$ tar -zxvf libiconv-1.15.tar.gz
+$ cd libiconv-1.15
+$ ./configure --prefix=/usr
+$ make
+$ make install
+        </code></pre></p>
+      </div>
+
+      <div class="pt-3">
+        <h5>nanomsg 安装</h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+$ git clone https://github.com/nanomsg/nanomsg.git
+$ cd nanomsg
+$ ./configure --prefix=/usr
+$ make
+$ make install
+        </code></pre></p>
+      </div>
+
+      <div class="pt-3">
+        <h5>protobuf 编译安装</h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+$ wget https://github.com/google/protobuf/releases/download/v3.5.1/protobuf-cpp-3.5.1.tar.gz
+$ tar -zxvf protobuf-cpp-3.5.1.tar.gz
+$ cd protobuf-3.5.1
+$ ./configure
+$ make
+$ make install
+$ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+        </code></pre></p>
+      </div>
+
+      <div class="pt-3">
+        <h5>protobuf-c 编译安装</h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+$ wget https://github.com/protobuf-c/protobuf-c/releases/download/v1.3.0/protobuf-c-1.3.0.tar.gz
+$ cd protobuf-c-1.3.0
+$ ./configure
+$ make
+$ make install
+        </code></pre></p>
+      </div>
+
+      <div class="pt-3">
+        <h5>cmpp 协议库安装</h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+$ git clone https://github.com/typefo/cmpp.git
+$ cd cmpp
+$ make
+$ make install
+        </code></pre></p>
+      </div>
+
+      <div class="pt-3">
+        <h5>安装 lamb 系统</h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+$ git clone https://github.com/typefo/lamb.git
+$ cd lamb
+$ make
+$ make install
+$ make config
+$ make script
+        </code></pre></p>
+      </div>
+
+      <div class="pt-3">
+        <h5>rsyslog 日志规则 <small class="text-secondary"> /etc/rsyslog.d/lamb.conf</small></h5>
+        <p><pre class="pl-3 bg-light rounded"><code>
+$template lamblog,"/var/log/%programname%.log"
+if $syslogfacility-text == "user" then {
+        action(type="omfile" fileOwner="lamb" filegroup="lamb" dynafile="lamblog")
+	stop
+}
+        </code></pre></p>
+      </div>
+    </main>
+
+    <div class="footer text-center">
+      <span class="text-muted">Copyright © 2018 BitCloud, Inc. All Rights Reserved.</span>
+    </div>
+  </body>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</html>
