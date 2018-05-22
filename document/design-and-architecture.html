@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Design and architecture - lamb gateway</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/default.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="/">
+          <img src="../img/logo.svg" width="24" height="24" />
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="../index.html">Home</a>
+        <a class="py-2 d-none d-md-inline-block" href="../commands.html">Commands</a>
+        <a class="py-2 d-none d-md-inline-block" href="../clients.html">Clients</a>
+        <a class="py-2 d-none d-md-inline-block" href="../download.html">Download</a>
+        <a class="py-2 d-none d-md-inline-block" href="../document.html">Documentation</a>
+        <a class="py-2 d-none d-md-inline-block" href="../community.html">Community</a>
+        <a class="py-2 d-none d-md-inline-block" href="../support.html">Support</a>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <h5 class="mt-5">Design and architecture</h5>
+      <p class="lead text-secondary"><small>lamb 系统设计与架构原理</p>
+      <p>
+        <img class="rounded mx-auto d-block" src="../img/arch.png" width="900" height="500"/>
+      </p>
+      <p class="text-center">lamb 架构图</p>
+      <br />
+      <h5>ISMG</h5>
+      <p> ismg 模块为前端接入网关模块，负责所有客户端连接，ismg 为多进程工作模式，master 进程负责接入，同时验证客户端身份，然后每客户端 fork 一个新 work 进程进行后续服务。客户端消息由 work 进程处理送往下一处理模块 MT 消息存储服务器。同时 work 工作进程会从 mo 下行消息服务器拉取消息，然后将消息推送给客户端</p>
+      <h5>MT</h5>
+      <p> mt 为消息队列服务器模块，所有客户端提交的未处理消息全部在此暂时存储，并且等待后端 Server 服务拉取消息进行处理，mt 模块只存储上行消息</p>
+      <h5>MO</h5>
+      <p> mo 为消息队列服务器模块，所有运营商网关下发的已处理消息全部在此暂时存储，并且等待前端 ismg 客户端服务拉取消息进行推送，mo 模块只存储下行消息</p>
+      <h5>Server</h5>
+      <p>server 为核心业务处理模块，负责消息编码转换、黑名单检测、频率检测、退订号码检测、关键词检测、模板签名检测、消息计费、消息存储等等业务处理，一旦以上所有处理完成，server 会将消息发送至 Scheduler 上行路由调度器模块进行处理，同时 server 模块还负责处理从 Delivery 下行路由调度器拉取的运营商推送消息，并且经过处理后送往 MO 下行消息队列存储服务器模块</p>
+      <h5>Scheduler</h5>
+      <p>Scheduler 为上行消息路由调度器，负责将 server 处理过的客户端消息发送到相应的落地通道网关队列，同时 Scheduler 还负责检查每个通道的号码限制安全策略，来对消息进行不同的路由调度和过滤</p>
+      <h5>Delivery</h5>
+      <p>Delivery 下行路由调度器，负责将运营商网关推送过来的消息进行处理，然后根据下行路由表存储到内部的消息队列中，等待前端 server 服务进程来拉取进行处理。</p>
+      <h5>Channel</h5>
+      <p>Channel 模块别名为 sp，负责处理运营商网关通道的连接和消息发送与接收，sp 模块会从 Scheduler 调度器拉取消息，然后经过消息编码处理和接入码处理，最后送到运营商网关。同时 sp 模块还负责接收运营商推送的消息，然后发送到 Delivery 下行路由调度器进行处理和存储。</p>
+    </main>
+
+    <div class="footer text-center">
+      <span class="text-muted">Copyright © 2018 BitCloud, Inc. All Rights Reserved.</span>
+    </div>
+  </body>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</html>
